@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Produtos | Escola Fullstack JavaScript</title>
+    <link rel="stylesheet" href="../../styles/dashboard-base.css" />
+    <link rel="stylesheet" href="produto.css" />
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <aside class="sidebar">
+        <div class="profile-section">
+          <div class="avatar">AN</div>
+          <div class="profile-info">
+            <h4>Leo Gomes</h4>
+            <span class="status-online"
+              ><i class="fa-solid fa-circle"></i> Online</span
+            >
+          </div>
+        </div>
+        <nav class="menu">
+          <p class="menu-title">NAVEGAÇÃO PRINCIPAL</p>
+          <a href="../dashboard/dashboard.html" class="menu-item"
+            ><i class="fa-solid fa-gauge"></i> Dashboard</a
+          >
+          <a href="../usuarios/usuarios.html" class="menu-item"
+            ><i class="fa-solid fa-users"></i> Usuários</a
+          >
+          <a href="produtos.html" class="menu-item active" aria-current="page"
+            ><i class="fa-solid fa-box"></i> Produtos</a
+          >
+          <a href="../configuracoes/configuracoes.html" class="menu-item"
+            ><i class="fa-solid fa-gear"></i> Configurações</a
+          >
+        </nav>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div class="topbar-left">
+            <button class="toggle-btn" type="button" aria-label="Alternar menu">
+              ☰
+            </button>
+            <span><b>Admin</b>LTE</span>
+          </div>
+          <div>
+            <a href="../../index.html" id="logout-btn" class="logout-link"
+              ><i class="fa-solid fa-sign-out-alt"></i> Sair</a
+            >
+          </div>
+        </header>
+
+        <div class="content-header">
+          <h1>Produtos <small>Controle de Estoque</small></h1>
+          <div class="breadcrumb">
+            <span><i class="fa-solid fa-gauge"></i> Home</span> / Produtos
+          </div>
+        </div>
+
+        <div class="dashboard-grid">
+          <div class="left-column">
+            <section class="box border-top-green">
+              <div class="box-header"><h3>Produtos Cadastrados</h3></div>
+              <div class="box-body">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Nome do Item</th>
+                      <th>Preço</th>
+                      <th>Qtd em Estoque</th>
+                      <th>Ações</th>
+                    </tr>
+                  </thead>
+                  <tbody id="table-products-body"></tbody>
+                </table>
+              </div>
+            </section>
+          </div>
+
+          <aside class="right-column">
+            <section class="box border-top-green">
+              <div class="box-header"><h3>Novo Item</h3></div>
+              <form id="product-form" class="box-body">
+                <div class="form-group">
+                  <label for="prod-name">Nome do Produto</label
+                  ><input type="text" id="prod-name" required />
+                </div>
+                <div class="form-group">
+                  <label for="prod-price">Preço Unitário</label
+                  ><input type="number" step="0.01" id="prod-price" required />
+                </div>
+                <div class="form-group">
+                  <label for="prod-qty">Quantidade</label
+                  ><input type="number" id="prod-qty" required />
+                </div>
+                <button type="submit" class="btn-submit bg-green">
+                  Adicionar ao Estoque
+                </button>
+              </form>
+            </section>
+          </aside>
+        </div>
+      </main>
+    </div>
+
+    <footer class="professor-footer">
+      <p>
+        Painel de estudos por: <strong>Leo Gomes Developer</strong> |
+        <a href="https://leogomesdev.com" target="_blank">leogomesdev.com</a>
+      </p>
+    </footer>
+    <script src="../../scripts/produtos.js" defer></script>
+  </body>
+</html>

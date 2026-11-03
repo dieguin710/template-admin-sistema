@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AdminLTE - Usuários</title>
+    <!-- CSS Estrutural Compartilhado -->
+    <link rel="stylesheet" href="../../styles/dashboard-base.css" />
+    <!-- CSS Específico desta Página -->
+    <link rel="stylesheet" href="usuarios.css" />
+    <!-- Biblioteca de Ícones -->
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <!-- Sidebar Lateral -->
+      <aside class="sidebar">
+        <div class="profile-section">
+          <div class="avatar">AN</div>
+          <div class="profile-info">
+            <h4>Leo Gomes</h4>
+            <span class="status-online"
+              ><i class="fa-solid fa-circle"></i> Online</span
+            >
+          </div>
+        </div>
+        <nav class="menu">
+          <p class="menu-title">NAVEGAÇÃO PRINCIPAL</p>
+          <a href="../dashboard/dashboard.html" class="menu-item"
+            ><i class="fa-solid fa-gauge"></i> Dashboard</a
+          >
+          <a href="usuarios.html" class="menu-item active" aria-current="page"
+            ><i class="fa-solid fa-users"></i> Usuários</a
+          >
+          <a href="../produtos/produtos.html" class="menu-item"
+            ><i class="fa-solid fa-box"></i> Produtos</a
+          >
+          <a href="../configuracoes/configuracoes.html" class="menu-item"
+            ><i class="fa-solid fa-gear"></i> Configurações</a
+          >
+        </nav>
+      </aside>
+
+      <!-- Área de Conteúdo Principal -->
+      <main class="main-content">
+        <!-- Topbar Superior -->
+        <header class="topbar">
+          <div class="topbar-left">
+            <button class="toggle-btn" type="button" aria-label="Alternar menu">
+              ☰
+            </button>
+            <span><b>Admin</b>LTE</span>
+          </div>
+          <div>
+            <a href="../../index.html" id="logout-btn" class="logout-link">
+              <i class="fa-solid fa-sign-out-alt"></i> Sair
+            </a>
+          </div>
+        </header>
+
+        <!-- Cabeçalho Interno da Página -->
+        <div class="content-header">
+          <h1>Usuários <small>Painel de Controle</small></h1>
+          <div class="breadcrumb">
+            <span><i class="fa-solid fa-gauge"></i> Home</span> / Usuários
+          </div>
+        </div>
+
+        <!-- Grid Organizador da View -->
+        <div class="dashboard-grid">
+          <!-- Coluna da Esquerda: Indicadores e Listagem -->
+          <div class="left-column">
+            <!-- Cards de Estatísticas (Small Boxes) -->
+            <div class="cards-container">
+              <div class="small-box bg-aqua">
+                <div class="inner">
+                  <h3 id="count-users">0</h3>
+                  <p>Novos Usuários</p>
+                </div>
+                <div class="icon"><i class="fa-solid fa-user-plus"></i></div>
+              </div>
+              <div class="small-box bg-yellow">
+                <div class="inner">
+                  <h3 id="count-admins">0</h3>
+                  <p>Administradores</p>
+                </div>
+                <div class="icon"><i class="fa-solid fa-chart-pie"></i></div>
+              </div>
+            </div>
+
+            <!-- Tabela de Listagem -->
+            <section class="box border-top-blue">
+              <div class="box-header">
+                <h3>Lista de Usuários</h3>
+              </div>
+              <div class="box-body table-responsive">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Foto</th>
+                      <th>Nome</th>
+                      <th>E-mail</th>
+                      <th>Admin</th>
+                      <th>Ações</th>
+                    </tr>
+                  </thead>
+                  <tbody id="table-users-body"></tbody>
+                </table>
+              </div>
+            </section>
+          </div>
+
+          <!-- Coluna da Direita: Formulário de Cadastro -->
+          <aside class="right-column">
+            <section class="box border-top-blue">
+              <div class="box-header">
+                <h3>Novo Usuário</h3>
+              </div>
+              <form
+                id="user-form"
+                class="box-body"
+                enctype="multipart/form-data"
+              >
+                <div class="form-group">
+                  <label for="user-name">Nome</label>
+                  <input
+                    type="text"
+                    id="user-name"
+                    required
+                    placeholder="Nome completo"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="user-email">E-mail</label>
+                  <input
+                    type="email"
+                    id="user-email"
+                    required
+                    placeholder="exemplo@email.com"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="user-photo">Foto</label>
+                  <input type="file" id="user-photo" accept="image/*" />
+                </div>
+
+                <div class="form-group form-checkbox">
+                  <input type="checkbox" id="user-admin" />
+                  <label for="user-admin">Administrador</label>
+                </div>
+
+                <button type="submit" class="btn-submit">Salvar Usuário</button>
+              </form>
+            </section>
+          </aside>
+        </div>
+      </main>
+    </div>
+
+    <!-- Rodapé de Créditos -->
+    <footer class="professor-footer">
+      <p>
+        Painel de estudos por: <strong>Leo Gomes Developer</strong> |
+        <a href="https://leogomesdev.com" target="_blank">leogomesdev.com</a> |
+        GitHub: <a href="https://github.com" target="_blank">leo-gomes-dev</a>
+      </p>
+    </footer>
+    <script src="../../scripts/usuarios.js" defer></script>
+  </body>
+</html>

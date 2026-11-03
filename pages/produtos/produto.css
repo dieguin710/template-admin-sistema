@@ -1,0 +1,153 @@
+/* ==========================================================================
+   AdminLTE - CONTROLE DE ESTOQUE (`produtos.css`)
+   ========================================================================== */
+
+/* Layout Interno do Painel de Produtos */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr);
+  gap: 20px;
+  padding: 15px;
+}
+
+/* Estrutura dos Painéis (Boxes clássicos do AdminLTE) */
+.box {
+  background: #ffffff;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  border-top: 3px solid #d2d6de;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+/* Modificador de cor para o topo do box - Tema Verde (Sucesso/Estoque) */
+.box.border-top-green {
+  border-top-color: #00a65a;
+}
+
+.box-header {
+  padding: 10px 15px;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.box-header h3 {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.box-body {
+  padding: 15px;
+}
+
+/* Listagem de Itens (Tabela de Produtos) */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.box-body { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+th,
+td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #f4f4f4;
+  text-align: left;
+  font-size: 14px;
+}
+
+th {
+  font-weight: 600;
+  color: #444444;
+}
+
+/* Emblemas de Status (Badges) */
+.badge {
+  padding: 3px 8px;
+  font-size: 12px;
+  color: #ffffff;
+  border-radius: 3px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.badge.bg-green {
+  background-color: #00a65a !important;
+}
+
+/* Elementos do Formulário de Cadastro */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333333;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #d2d6de;
+  border-radius: 3px;
+  outline: none;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+  border-color: #00a65a;
+}
+
+/* Componentes de Ação (Botões) */
+.btn-box {
+  border: none;
+  padding: 6px 10px;
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 13px;
+  transition: opacity 0.2s;
+}
+
+.btn-delete {
+  background-color: #dd4b39; /* Danger AdminLTE */
+}
+
+.btn-box:hover {
+  opacity: 0.85;
+}
+
+.btn-submit {
+  width: 100%;
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.btn-submit.bg-green {
+  background-color: #00a65a;
+  border: 1px solid #008d4c;
+}
+
+.btn-submit.bg-green:hover {
+  background-color: #008d4c;
+}
+
+/* Responsividade do Grid Local */
+@media (max-width: 992px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 560px) {
+  .dashboard-grid { padding: 12px; gap: 12px; }
+  th, td { padding: 9px 8px; white-space: nowrap; }
+}
+:focus-visible { outline: 3px solid #0284c7; outline-offset: 2px; }

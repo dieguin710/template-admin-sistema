@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Painel | Escola Fullstack JavaScript</title>
+    <!-- Importação do arquivo CSS compartilhado -->
+    <link rel="stylesheet" href="../../styles/dashboard-base.css" />
+    <link rel="stylesheet" href="dashboard.css" />
+    <!-- Biblioteca de Ícones -->
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <!-- Sidebar Lateral (Padrão AdminLTE) -->
+      <aside class="sidebar">
+        <div class="profile-section">
+          <div class="avatar">AN</div>
+          <div class="profile-info">
+            <h4>Leo Gomes</h4>
+            <span class="status-online"
+              ><i class="fa-solid fa-circle"></i> Online</span
+            >
+          </div>
+        </div>
+        <nav class="menu">
+          <p class="menu-title">NAVEGAÇÃO PRINCIPAL</p>
+          <a href="dashboard.html" class="menu-item active" aria-current="page"
+            ><i class="fa-solid fa-gauge"></i> Dashboard</a
+          >
+          <a href="../usuarios/usuarios.html" class="menu-item"
+            ><i class="fa-solid fa-users"></i> Usuários</a
+          >
+          <a href="../produtos/produtos.html" class="menu-item"
+            ><i class="fa-solid fa-box"></i> Produtos</a
+          >
+          <a href="../configuracoes/configuracoes.html" class="menu-item"
+            ><i class="fa-solid fa-gear"></i> Configurações</a
+          >
+        </nav>
+      </aside>
+
+      <!-- Área de Conteúdo Principal -->
+      <main class="main-content">
+        <!-- Topbar superior -->
+        <header class="topbar">
+          <div class="topbar-left">
+            <button class="toggle-btn" type="button" aria-label="Alternar menu">
+              ☰
+            </button>
+            <span><b>Admin</b>LTE</span>
+          </div>
+          <div>
+            <a href="../../index.html" id="logout-btn" class="logout-link"
+              >Sair</a
+            >
+          </div>
+        </header>
+
+        <!-- Cabeçalho interno da página -->
+        <div class="content-header">
+          <h1>Painel de Controle <small>Espaço de Trabalho</small></h1>
+          <div class="breadcrumb">
+            <span><i class="fa-solid fa-gauge"></i> Home</span> / Dashboard
+          </div>
+        </div>
+
+        <div class="main-content-inner">
+          <section class="welcome-box">
+            <div>
+              <p class="eyebrow">AMBIENTE DE TREINAMENTO</p>
+              <h2>Olá, aluno! 👋</h2>
+              <p>
+                Acompanhe os dados do projeto e escolha um desafio para praticar
+                JavaScript.
+              </p>
+            </div>
+            <a class="welcome-action" href="../usuarios/usuarios.html"
+              >Começar pelos usuários <span aria-hidden="true">→</span></a
+            >
+          </section>
+
+          <section class="dashboard-section" aria-labelledby="overview-title">
+            <div class="section-heading">
+              <div>
+                <h2 id="overview-title">Visão geral</h2>
+                <p>Resumo dos dados cadastrados neste navegador.</p>
+              </div>
+            </div>
+            <div class="stat-grid">
+              <article class="stat-card stat-blue">
+                <div class="stat-icon" aria-hidden="true">♟</div>
+                <p>Total de usuários</p>
+                <strong id="dashboard-user-count">0</strong>
+                <a href="../usuarios/usuarios.html"
+                  >Ver usuários <span aria-hidden="true">→</span></a
+                >
+              </article>
+              <article class="stat-card stat-green">
+                <div class="stat-icon" aria-hidden="true">▣</div>
+                <p>Produtos cadastrados</p>
+                <strong id="dashboard-product-count">0</strong>
+                <a href="../produtos/produtos.html"
+                  >Ver produtos <span aria-hidden="true">→</span></a
+                >
+              </article>
+              <article class="stat-card stat-orange">
+                <div class="stat-icon" aria-hidden="true">▤</div>
+                <p>Unidades em estoque</p>
+                <strong id="dashboard-stock-count">0</strong>
+                <a href="../produtos/produtos.html"
+                  >Conferir estoque <span aria-hidden="true">→</span></a
+                >
+              </article>
+              <article class="stat-card stat-purple">
+                <div class="stat-icon" aria-hidden="true">R$</div>
+                <p>Valor em estoque</p>
+                <strong id="dashboard-stock-value">R$ 0,00</strong>
+                <span class="stat-note">Soma de preço × quantidade</span>
+              </article>
+            </div>
+          </section>
+
+          <section
+            class="dashboard-section practice-section"
+            aria-labelledby="practice-title"
+          >
+            <div class="section-heading">
+              <div>
+                <h2 id="practice-title">Trilhas de prática</h2>
+                <p>Use as páginas como ponto de partida para os exercícios.</p>
+              </div>
+            </div>
+            <div class="practice-grid">
+              <a class="practice-card" href="../usuarios/usuarios.html">
+                <span class="practice-number">01</span>
+                <div>
+                  <h3>Cadastro de usuários</h3>
+                  <p>Formulários, validação, tabelas e operações CRUD.</p>
+                </div>
+                <span class="practice-arrow" aria-hidden="true">→</span>
+              </a>
+              <a class="practice-card" href="../produtos/produtos.html">
+                <span class="practice-number">02</span>
+                <div>
+                  <h3>Estoque de produtos</h3>
+                  <p>Números, formatação de moeda e cálculos de estoque.</p>
+                </div>
+                <span class="practice-arrow" aria-hidden="true">→</span>
+              </a>
+              <a
+                class="practice-card"
+                href="../configuracoes/configuracoes.html"
+              >
+                <span class="practice-number">03</span>
+                <div>
+                  <h3>Preferências do sistema</h3>
+                  <p>Eventos, estado da aplicação e persistência local.</p>
+                </div>
+                <span class="practice-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <!-- Rodapé Unificado -->
+    <footer class="professor-footer">
+      <p>
+        Painel de estudos por: <strong>Leo Gomes Developer</strong> |
+        <a href="https://leogomesdev.com" target="_blank">leogomesdev.com</a> |
+        GitHub: <a href="https://github.com" target="_blank">leo-gomes-dev</a>
+      </p>
+    </footer>
+    <script src="../../scripts/dashboard.js" defer></script>
+  </body>
+</html>

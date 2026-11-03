@@ -1,0 +1,155 @@
+/* ==========================================================================
+   AdminLTE - ESTILO DA TELA DE LOGIN (`styles/style.css`)
+   ========================================================================== */
+
+/* Variáveis Visuais da Identidade do Login */
+:root {
+  --bg-primary: #f4f6f9;
+  --color-blue: #0ea5e9;
+  --border-color: #d2d6de;
+  --text-main: #333333;
+  --text-muted: #777777;
+}
+
+/* Reset Geral */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body.login-page {
+  background-color: var(--bg-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 24px 16px;
+  color: var(--text-main);
+}
+
+/* Caixa Centralizada */
+.login-box {
+  width: min(100%, 360px);
+  margin-bottom: 25px;
+}
+
+.login-logo {
+  text-align: center;
+  font-size: 35px;
+  margin-bottom: 25px;
+}
+
+.login-logo a {
+  text-decoration: none;
+  color: #444444;
+}
+
+.login-logo b {
+  font-weight: 700;
+}
+
+/* Box do Formulário */
+.login-card {
+  background: #ffffff;
+  border-top: 3px solid var(--color-blue);
+  padding: 20px;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.login-box-msg {
+  text-align: center;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+/* Elementos de Input */
+.input-group {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px 40px 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  outline: none;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.input-group input:focus {
+  border-color: var(--color-blue);
+}
+
+.input-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999999;
+}
+.input-icon i { font-style: normal; }
+.fa-envelope::before { content: "✉"; }
+.fa-lock::before { content: "▣"; }
+
+/* Ações Inferiores */
+.login-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--color-blue);
+  color: #ffffff;
+  border: 1px solid #00a7d0;
+  padding: 8px 16px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #00a7d0;
+}
+
+/* Rodapé Simplificado */
+.professor-footer.mini {
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.professor-footer.mini strong {
+  color: #444444;
+}
+
+.professor-footer.mini a {
+  color: var(--color-blue);
+  text-decoration: none;
+  font-weight: 600;
+}
+.login-help { margin-top: 16px; color: var(--text-muted); font-size: 12px; line-height: 1.6; text-align: center; }
+:focus-visible { outline: 3px solid #0284c7; outline-offset: 2px; }
+@media (max-width: 420px) {
+  .login-actions { align-items: flex-start; gap: 12px; flex-wrap: wrap; }
+  .login-actions .btn-primary { width: 100%; }
+}

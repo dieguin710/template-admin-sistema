@@ -1,0 +1,262 @@
+/* ==========================================================================
+   AdminLTE - GERENCIAMENTO DE USUÁRIOS (`usuarios.css`)
+   ========================================================================== */
+
+/* Grid Organizador da Tela (Tabela + Form) */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr);
+  gap: 20px;
+  padding: 15px;
+}
+
+/* Container dos Indicadores Superiores */
+.cards-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+/* Small Box Estilo Clássico AdminLTE */
+.small-box {
+  border-radius: 3px;
+  position: relative;
+  display: block;
+  color: #ffffff;
+  padding: 15px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.bg-aqua {
+  background-color: #00c0ef !important;
+}
+.bg-yellow {
+  background-color: #f39c12 !important;
+}
+
+.small-box h3 {
+  font-size: 38px;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+  white-space: nowrap;
+}
+
+.small-box p {
+  font-size: 15px;
+  margin: 0;
+}
+
+.small-box .icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 60px;
+  color: rgba(0, 0, 0, 0.15);
+  z-index: 0;
+}
+
+/* Estrutura de Boxes (Cartões do Painel) */
+.box {
+  background: #ffffff;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  border-top: 3px solid #d2d6de;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.box.border-top-blue {
+  border-top-color: #00c0ef;
+}
+
+.box-header {
+  padding: 10px 15px;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.box-header h3 {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.box-body {
+  padding: 15px;
+}
+
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Customização da Tabela de Usuários */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #f4f4f4;
+  text-align: left;
+  font-size: 14px;
+}
+
+th {
+  font-weight: 600;
+  color: #444444;
+}
+
+.table-avatar {
+  width: 32px;
+  height: 32px;
+  background: #e2e8f0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #333333;
+}
+
+.badge {
+  padding: 3px 6px;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge-yes {
+  background-color: #00a65a;
+  color: #ffffff;
+}
+
+/* Campos do Formulário */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #d2d6de;
+  border-radius: 3px;
+  outline: none;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+  border-color: #00c0ef;
+}
+
+/* Ajustes específicos para campos File e Checkbox */
+.form-group input[type='file'] {
+  border: none;
+  padding: 5px 0;
+}
+
+.form-group.form-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.form-group.form-checkbox input[type='checkbox'] {
+  width: auto;
+  margin: 0;
+  cursor: pointer;
+}
+
+.form-group.form-checkbox label {
+  display: inline;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+/* Componentes de Botões (Ações) */
+.btn-box {
+  border: none;
+  padding: 6px 10px;
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 13px;
+  transition: opacity 0.2s;
+  margin-right: 2px;
+}
+
+.btn-edit {
+  background-color: #00c0ef;
+}
+.btn-delete {
+  background-color: #dd4b39;
+}
+.btn-box:hover {
+  opacity: 0.85;
+}
+
+.btn-submit {
+  width: 100%;
+  background-color: #00a65a;
+  color: #ffffff;
+  border: 1px solid #008d4c;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background-color 0.2s;
+  margin-top: 5px;
+}
+
+.btn-submit:hover {
+  background-color: #008d4c;
+}
+
+/* Ajustes de Responsividade */
+@media (max-width: 992px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 560px) {
+  .dashboard-grid {
+    padding: 12px;
+    gap: 12px;
+  }
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+  .small-box h3 {
+    font-size: 30px;
+  }
+  th,
+  td {
+    padding: 9px 8px;
+    white-space: nowrap;
+  }
+}
+:focus-visible {
+  outline: 3px solid #0284c7;
+  outline-offset: 2px;
+}
+
+.btn-excluir {
+  background-color: #dd4b39;
+  padding: 10px;
+}

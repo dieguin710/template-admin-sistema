@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | Escola Fullstack JavaScript</title>
+    <!-- Apontando para o CSS na pasta styles da raiz -->
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body class="login-page">
+    <div class="login-box">
+      <div class="login-logo">
+        <a href="#"><b>Admin</b>LTE</a>
+      </div>
+
+      <div class="login-card">
+        <p class="login-box-msg">Faça login para iniciar sua sessão</p>
+
+        <form id="login-form">
+          <div class="input-group">
+            <input
+              type="email"
+              id="login-email"
+              name="email"
+              autocomplete="username"
+              placeholder="E-mail"
+            />
+            <div class="input-icon"><i class="fa-solid fa-envelope"></i></div>
+          </div>
+          <div class="input-group">
+            <input
+              type="password"
+              id="login-password"
+              name="password"
+              autocomplete="current-password"
+              placeholder="Senha"
+            />
+            <div class="input-icon"><i class="fa-solid fa-lock"></i></div>
+          </div>
+          <div class="login-actions">
+            <div class="remember-me">
+              <input type="checkbox" id="remember" />
+              <label for="remember">Lembrar-me</label>
+            </div>
+            <!-- No JS, após validar o localStorage, redirecionar para: pages/dashboard/dashboard.html -->
+            <button type="submit" class="btn-primary">Acessar</button>
+          </div>
+        </form>
+        <p class="login-help">
+          Demonstração: <strong>aluno@fullstack.dev</strong> /
+          <strong>123456</strong>
+        </p>
+      </div>
+    </div>
+
+    <footer class="professor-footer mini">
+      <p>Proposto por: <strong>Leo Gomes Developer</strong></p>
+      <div class="footer-links">
+        <a href="https://leogomesdev.com" target="_blank" rel="noreferrer"
+          >leogomesdev.com</a
+        >
+      </div>
+    </footer>
+    <script src="scripts/main.js" defer></script>
+  </body>
+</html>

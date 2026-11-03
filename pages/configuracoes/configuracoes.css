@@ -1,0 +1,108 @@
+/* ==========================================================================
+   AdminLTE - PREFERÊNCIAS DO SISTEMA (`configuracoes.css`)
+   ========================================================================== */
+
+/* Container Centralizado para Ajustes */
+.config-container {
+  padding: 15px;
+  max-width: 700px;
+  width: min(100%, 700px);
+}
+
+/* Estrutura do Painel (Box clássico do AdminLTE) */
+.box {
+  background: #ffffff;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  border-top: 3px solid #d2d6de;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+/* Modificador de cor para o topo do box - Tema Laranja (Ajustes/Warning) */
+.box.border-top-orange {
+  border-top-color: #f39c12;
+}
+
+.box-header {
+  padding: 10px 15px;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.box-header h3 {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.box-body {
+  padding: 15px;
+}
+
+/* Elementos de Formulário */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333333;
+}
+
+/* Inputs de Texto e Elementos Select */
+.form-group input[type="text"],
+.form-group select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #d2d6de;
+  border-radius: 3px;
+  outline: none;
+  font-size: 14px;
+  background-color: #ffffff;
+  transition: border-color 0.2s;
+}
+
+.form-group input[type="text"]:focus,
+.form-group select:focus {
+  border-color: #f39c12;
+}
+
+/* Customização de Checkbox simples */
+.form-group input[type="checkbox"] {
+  margin-right: 6px;
+  transform: translateY(1px);
+  cursor: pointer;
+}
+
+/* Alinhamento do rótulo inline do checkbox */
+.form-group label:has(input[type="checkbox"]) {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+/* Componente de Envio (Botão) */
+.btn-submit {
+  width: 100%;
+  color: #ffffff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.btn-submit.bg-orange {
+  background-color: #f39c12;
+  border: 1px solid #e08e0b;
+}
+
+.btn-submit.bg-orange:hover {
+  background-color: #e08e0b;
+}
+:focus-visible { outline: 3px solid #0284c7; outline-offset: 2px; }

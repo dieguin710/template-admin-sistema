@@ -1,0 +1,276 @@
+/* ==========================================================================
+   AdminLTE - ARQUIVO BASE DO PAINEL GLOBAL (`styles/dashboard-base.css`)
+   ========================================================================== */
+
+/* Definições de Cores e Estilos Globais do Tema */
+:root {
+  --bg-primary: #f4f6f9;
+  --bg-sidebar: #222d32; /* Azul escuro clássico do AdminLTE */
+  --bg-sidebar-hover: #1e282c;
+  --bg-profile: #1a2226;
+  --color-blue: #0ea5e9;
+  --color-green: #00a65a; /* Verde Success */
+  --text-main: #333333;
+  --text-muted: #777777;
+  --border-color: #d2d6de;
+}
+
+/* Reset Geral do Documento */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Container Estrutural (Sidebar + Conteúdo Principal) */
+.dashboard-container {
+  display: flex;
+  flex: 1;
+}
+
+/* ==========================================================================
+   BARRA LATERAL (SIDEBAR)
+   ========================================================================== */
+.sidebar {
+  width: 250px;
+  flex: 0 0 250px;
+  background-color: var(--bg-sidebar);
+  color: #b8c7ce;
+  display: flex;
+  flex-direction: column;
+}
+.sidebar.is-collapsed { display: none; }
+
+/* Seção de Perfil do Usuário Logado */
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px;
+  background-color: var(--bg-profile);
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #555555;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.profile-info h4 {
+  font-size: 14px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.status-online {
+  font-size: 11px;
+  color: var(--color-green);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 4px;
+}
+
+/* Links de Navegação do Menu */
+.menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-title {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #4b646f;
+  background-color: var(--bg-profile);
+  padding: 10px 15px;
+  letter-spacing: 0.5px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #b8c7ce;
+  text-decoration: none;
+  padding: 12px 15px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.menu-item i { width: 18px; text-align: center; }
+.fa-solid { display: inline-block; min-width: 1.15em; font-style: normal; text-align: center; }
+.fa-circle::before { content: "●"; font-size: .7em; }
+.fa-users::before { content: "♟"; }
+.fa-box::before { content: "▣"; }
+.fa-gear::before { content: "⚙"; }
+.fa-sign-out-alt::before { content: "↪"; }
+.fa-gauge::before { content: "◷"; }
+.fa-user-plus::before { content: "+"; }
+.fa-chart-pie::before { content: "◕"; }
+.fa-pen::before { content: "✎"; }
+.fa-trash::before { content: "×"; }
+.menu-item:hover {
+  background-color: var(--bg-sidebar-hover);
+  color: #ffffff;
+}
+
+/* Estado Ativo do Menu Lateral */
+.menu-item.active {
+  background-color: var(--bg-sidebar-hover);
+  color: #ffffff;
+  border-left-color: var(--color-blue);
+}
+
+/* ==========================================================================
+   ÁREA PRINCIPAL DE CONTEÚDO (MAIN CONTENT)
+   ========================================================================== */
+.main-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Barra Superior (Topbar) */
+.topbar {
+  background-color: var(--color-blue);
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  color: #ffffff;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 18px;
+}
+
+.topbar-left b {
+  font-weight: 700;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: #ffffff;
+}
+.toggle-btn:hover { background: rgba(255,255,255,.12); }
+
+#logout-btn {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: opacity 0.2s;
+}
+
+#logout-btn:hover {
+  opacity: 0.8;
+}
+
+/* Cabeçalho da Página Interna (Títulos e Caminhos) */
+.content-header {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content-header h1 {
+  font-size: 22px;
+  font-weight: 300;
+}
+
+.content-header h1 small {
+  font-size: 15px;
+  color: var(--text-muted);
+  font-weight: 400;
+  margin-left: 5px;
+}
+
+.breadcrumb {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.breadcrumb span {
+  color: #444444;
+}
+
+/* ==========================================================================
+   RODAPÉ UNIFICADO (FOOTER)
+   ========================================================================== */
+.professor-footer {
+  background-color: #ffffff;
+  color: #555555;
+  text-align: left;
+  padding: 15px;
+  margin-top: auto;
+  border-top: 1px solid var(--border-color);
+  font-size: 14px;
+}
+
+.professor-footer strong {
+  color: #000000;
+}
+
+.professor-footer a {
+  color: var(--color-blue);
+  text-decoration: none;
+}
+
+.professor-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsividade de Tela do Painel */
+@media (max-width: 768px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    flex-basis: auto;
+  }
+  .profile-section { padding: 10px 15px; }
+  .menu { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .menu-title { grid-column: 1 / -1; }
+  .topbar { min-height: 54px; height: auto; }
+  .professor-footer { line-height: 1.6; }
+  .content-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+@media (max-width: 480px) {
+  .menu { grid-template-columns: 1fr; }
+  .topbar-left { gap: 8px; font-size: 16px; }
+  .content-header h1 { font-size: 20px; }
+  .content-header h1 small { display: block; margin: 4px 0 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: .01ms !important; }
+}
