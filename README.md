@@ -11,7 +11,7 @@ git clone https://github.com/leo-gomes-dev/template-admin-poo-javascript.git
 cd template-admin-poo-javascript
 ```
 
-O código-fonte está no [GitHub](https://github.com/leo-gomes-dev/template-admin-poo-javascript).
+O código-fonte está no [GitHub](https://github.com/leo-gomes-dev/template-admin-sistema.git).
 
 ## Como executar
 
