@@ -28,6 +28,7 @@ function saveData(e) {
     dados[2].textContent = 'R$ ' + preco;
     dados[3].textContent = qty;
 
+    salvarProdutos()
     linhaProdutoEmEdicao = null; // Limpa o estado de edição
     alert('Produto editado com sucesso!');
   } else {
@@ -56,12 +57,30 @@ function saveData(e) {
 
     btnExcluir.addEventListener('click', () => deletar(tr));
     btnEditar.addEventListener('click', () => editar(tr));
-
+    salvarProdutos()
     alert('Produto cadastrado com sucesso!');
   }
 
   prodForm.reset();
 }
+
+function salvarProdutos() {
+  const linhas = tableProductsBody.querySelectorAll("tr");
+  const produtos = [];
+  linhas.forEach((linha) => {
+  const dados = obterDadosDaLinha(linha);
+  if(dados) {
+    produtos.push({
+      id: dados[0].textContent,
+      nome: dados[1].textContent,
+      preco: dados[2].textContent,
+      estoque: dados[3].textContent,
+    })
+  }
+  })
+  localStorage.setItem("produtos", JSON.stringify(produtos))
+}
+
 
 // Pegar as células da linha
 function obterDadosDaLinha(tr) {

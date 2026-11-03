@@ -60,6 +60,8 @@ function saveData(e) {
     alert('Usuário cadastrado com sucesso!');
   }
 
+function salvarUsuarios() {}
+
   userForm.reset();
   atualizarEstatisticas();
 }
