@@ -1,6 +1,4 @@
 // 1. REFERÊNCIAS DOS ELEMENTOS HTML
-console.log('teste');
-
 const prodForm = document.querySelector('#prod-form');
 const prodName = document.querySelector('#prod-name');
 const prodPrice = document.querySelector('#prod-price');
