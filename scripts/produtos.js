@@ -125,3 +125,5 @@ document.querySelectorAll(`input[type="${type}"]`).forEach((input) => {
     }
   });
 });
+
+function puxarDadosLocalStorage
