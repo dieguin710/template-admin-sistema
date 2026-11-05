@@ -12,6 +12,8 @@ if (prodForm) {
   prodForm.addEventListener('submit', saveData);
 }
 
+document.addEventListener('DOMContentLoaded', puxarDadosLocalStorage);
+
 // Obter e salvar os dados
 function saveData(e) {
   e.preventDefault();
@@ -28,8 +30,8 @@ function saveData(e) {
     dados[2].textContent = 'R$ ' + preco;
     dados[3].textContent = qty;
 
-    salvarProdutos()
     linhaProdutoEmEdicao = null; // Limpa o estado de edição
+    salvarProdutos()
     alert('Produto editado com sucesso!');
   } else {
     // Modo Cadastro: Cria uma nova linha
@@ -38,8 +40,17 @@ function saveData(e) {
     // Gera um ID simples para simular um codigo unico
     const idGerado = '#' + Math.floor(1000 + Math.random() * 9000);
 
-    tr.innerHTML = `
-            <td>${idGerado}</td>
+    inserirDadosNaLinha(tr, idGerado, nome, preco, qty);
+    salvarProdutos()
+    alert('Produto cadastrado com sucesso!');
+  }
+
+  prodForm.reset();
+}
+
+function inserirDadosNaLinha(tr, id, nome, preco, qty) {
+  tr.innerHTML = `
+            <td>${id}</td>
             <td>${nome}</td>
             <td>R$ ${preco}</td>
             <td>${qty}</td>
@@ -57,11 +68,6 @@ function saveData(e) {
 
     btnExcluir.addEventListener('click', () => deletar(tr));
     btnEditar.addEventListener('click', () => editar(tr));
-    salvarProdutos()
-    alert('Produto cadastrado com sucesso!');
-  }
-
-  prodForm.reset();
 }
 
 function salvarProdutos() {
@@ -93,17 +99,20 @@ function deletar(tr) {
   const nomeProduto = celulas[1] ? celulas[1].textContent : '';
 
   const confirmDelete = confirm(
-    `Tem certeza que gostaria de deletar o produto "${nomeProduto}"?`,
+    `Tem certeza que gostaria de deletar o produto `
   );
+  console.log(tr);
 
   if (confirmDelete) {
     tr.remove();
+    salvarProdutos()
     alert('Produto excluído com sucesso!');
   }
 }
 
 // Editar Produto | coloca os dados de volta nos campos
 function editar(tr) {
+  console.log
   linhaProdutoEmEdicao = tr;
   const dados = obterDadosDaLinha(tr);
 
@@ -113,6 +122,7 @@ function editar(tr) {
   prodName.value = dados[1].textContent;
   prodPrice.value = precoLimpo;
   prodQty.value = dados[3].textContent;
+  salvarProdutos()
 }
 
 // função auxiliar -  para controlar os inputs Number
@@ -126,18 +136,16 @@ document.querySelectorAll(`input[type="${type}"]`).forEach((input) => {
   });
 });
 
-function puxarDadosLocalStorage {
+function puxarDadosLocalStorage() {
   const dadosSalvos = localStorage.getItem("produtos");
   if (dadosSalvos) {
     const produtos = JSON.parse(dadosSalvos);
-    tableProductsBody.innerHTML = ""
-    produtos.push({
-      id: dados[0].textContent,
-      nome: dados[1].textContent,
-      preco: dados[2].textContent,
-      estoque: dados[3].textContent,
-    })
+    produtos.forEach((produto) => {
+      inserirDadosNaLinha(tableProductsBody.insertRow(), produto.id, produto.nome, produto.preco, produto.estoque);
+      salvarProdutos()
+    });
   }
 }
 
-puxarDadosLocalStorage()
+
+
