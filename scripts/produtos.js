@@ -126,4 +126,18 @@ document.querySelectorAll(`input[type="${type}"]`).forEach((input) => {
   });
 });
 
-function puxarDadosLocalStorage
+function puxarDadosLocalStorage {
+  const dadosSalvos = localStorage.getItem("produtos");
+  if (dadosSalvos) {
+    const produtos = JSON.parse(dadosSalvos);
+    tableProductsBody.innerHTML = ""
+    produtos.push({
+      id: dados[0].textContent,
+      nome: dados[1].textContent,
+      preco: dados[2].textContent,
+      estoque: dados[3].textContent,
+    })
+  }
+}
+
+puxarDadosLocalStorage()
